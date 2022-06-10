@@ -11,6 +11,17 @@ const headers = {
 
 
 async function handleRequest(request) {
+    if (request.method == "GET") {
+        return new Response(
+            '<a href="https://github.com/shiyunjin/gh-oauth-cf-worker?ref=worker">https://github.com/shiyunjin/gh-oauth-cf-worker</a>', 
+            {
+                headers: {
+                    'content-type': 'text/html;charset=UTF-8',
+                },
+            }
+        );
+    }
+
     let input = await request.formData();
 
     const body = {};
